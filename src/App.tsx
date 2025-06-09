@@ -1,10 +1,14 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import GeoLocation from "./pages/GeoLocation";
+
 function App() {
   return (
-    <>
-      <div>
-        <p> code rabbit test ! </p>
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<GeoLocation />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
